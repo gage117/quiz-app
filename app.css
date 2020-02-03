@@ -13,75 +13,99 @@ html{
   font-family: 'Raleway', sans-serif;
   box-sizing: border-box;
 }
+
 body{
   text-align: center;
 }
+
+.header-img {
+  display: none;
+}
+
 form{
   display: inline-block;
-  margin-top: 20px;
+  margin: 15px 0 30px;
 }
+
+.vertical-center > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.vertical-center {
+  margin: 16px 0px;
+}
+
  .light{
   display: inline-block;
   margin:5px;
+  font-size: 15px;
 }
 
 header{
-  background-color: #f0d78c;
+  background-color: #214b22;
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 40px;
   padding-bottom: 30px;
-  color:#4f81c7;
+  color:#b7dfb9;
+}
+
+.start-button {
+  background-color: #214b22;
 }
 
  #start{
-  color:#e16363;
-  font-size: 50px;
-  font-weight: bold;
-  font-family: 'Fjalla One', sans-serif;
+  color:#214b22; 
+  margin: 30px 0px;
+  font-family: 'Raleway', sans-serif;
   -webkit-animation: fadeinout 4s linear forwards;
   animation: fadeinout 4s linear forwards;
 }
 
 @-webkit-keyframes fadeinout {
-0%,100% { opacity: 0; }
-50% { opacity: 1; }
+0% { opacity: 0; }
+100% { opacity: 1; }
 }
 
-@keyframes fadeinout {
-0%,100% { opacity: 0; }
-50% { opacity: 1; }
+@keyframes fadein {
+0% { opacity: 0; }
+100% { opacity: 1; }
 }
 
 button{
-  background-color: #555555;
-  color: white;
+  background-color: #214b22;
+  color: #fcfafa;
   font-size: 20px;
   text-align: center;
   display: inline-block;
   border-radius: 12px;
   margin: 20px 10px;
   padding: 10px 20px;
-  opacity: 0.6;
+  opacity: 1;
   transition: 0.3s;
   text-decoration:none;
   cursor: pointer;
      
 }
+
 button:hover {
   opacity: 1
 }
+
 .start-button{
   margin-top:10px
 }
 
 li{
+  font-size: 15px;
   padding:10px;
   text-align: left;
 }
+
 h1{
-  margin: 30px;
+  margin: 0px;
 }
 
 h2{
@@ -92,59 +116,58 @@ h2{
   color:#4f81c7;
   font-weight: bold;
 }
+
 input{
   margin-left:5px;
   margin-right:5px;
 }
+
 .quesline{
   font-family: 'Noto Sans', sans-serif;
+  font-size: 15px;
+}
+
+#start{
   font-size: 25px;
+  font-weight: bold;
+}
+
+button{
+  font-size: 12px;
+  margin: 20px 10px;
+  padding: 10px 12px;    
+}
+h1{
+  margin: 10px;
+  font-size: 20px;
 }
 img{
-  margin-left:5px;
-  margin-right:5px;
+  width: 30px;
+  height:30px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
-
-@media screen and (max-width: 320px){
-  header{
-    padding-top: 15px;
-    padding-bottom: 15px;
-  }
-
-  #start{
-    font-size: 25px;
-    font-weight: bold;
-  }
-
-  button{
-    font-size: 12px;
-    margin: 20px 10px;
-    padding: 10px 12px;    
-  }
-  h1{
-    margin: 10px;
-    font-size: 20px;
-  }
-  .quesline{
-    font-size: 15px;
-  }
-  img{
-    width: 30px;
-    height:30px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-  .current-question-text{
-    font-size: 15px;
-  }
-  li{
-    font-size: 15px;
-  }
-  .light{
-    font-size: 15px;
-  }
-  .correct{
-    font-size: 15px;
-  }
+.current-question-text{
+  font-size: 15px;
+}
+.correct{
+  font-size: 15px;
+}
   
+@media screen and (min-width: 350px) {
+  .header-img {
+    display: inline;
+    opacity: 0;
+  }
 }
+
+@media screen and (min-width: 370px) {
+  .header-img {
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 539px) {
+  h1 {
+    margin: 30px;
+  }

@@ -68,11 +68,16 @@ const store = {
 function generateStartPage() {
   return `
   <form class="startPage">
-  <img src="images\\light.png"><p class="light">The quiz contains 5 questions and  no time limit. </p></br>
-  <img src="images\\light.png"><p class="light">Let's see how much you know, or don't know, about Javascript, CSS and HTML.</p></br>
-  <p id="start">Good Luck !</p>
-  <button type='submit' class='start-button'>Start Quiz</button> 
-  
+    <div class="vertical-center">
+      <img class="header-img" src="images\\light.png" alt='lightbulb'>
+      <p class="light">The quiz contains 5 questions and  no time limit. </p>
+    </div>
+    <div class="vertical-center">
+      <img class="header-img" src="images\\light.png" alt='lightbulb'>
+      <p class="light">Let's see how much you know, or don't know, about Javascript, CSS and HTML.</p>
+    </div>
+    <p id="start">Good Luck !</p>
+    <button type='submit' class='start-button'>Start Quiz</button>
   </form>
   `;
 }
@@ -80,17 +85,21 @@ function generateStartPage() {
 function generateCurrentQuestion() {
   return `
     <form class='current-question-choices'>
-    <p class="quesline">Question <span class='question-number'>${store.questionNumber}</span> of 5</p>
-    <p class='current-question-text'>${store.questions[store.questionNumber-1].question}</p>
-    <ul style='list-style-type: none;'>
-      <li><label for ='a' class='choice-a'>A.<input type='radio' name='choice' value= 1 id = 'a' tabindex='0' required>${store.questions[store.questionNumber-1].answers[0]}</label></li>
-      <li><label for ='b' class='choice-b'>B.<input type='radio' name='choice' value= 2 id = 'b'>${store.questions[store.questionNumber-1].answers[1]}</label></li>
-      <li><label for ='c' class='choice-c'>C.<input type='radio' name='choice' value= 3 id = 'c'>${store.questions[store.questionNumber-1].answers[2]}</label></li>
-      <li><label for ='d' class='choice-d'>D.<input type='radio' name='choice' value= 4 id = 'd'>${store.questions[store.questionNumber-1].answers[3]}</label></li>
-    </ul>
-    <button type='submit' id='check-answer'>Check Answer</button>
-    <button type="submit" class='restart-button'>Restart</button> 
-    <p class="tellscore">Current Score: <span class='current-correct'>${store.score}</span> of ${store.questionNumber}</p>
+      <fieldset>
+        <legend>
+          <p class="quesline">Question <span class='question-number'>${store.questionNumber}</span> of 5</p>
+        </legend>
+          <p class='current-question-text'>${store.questions[store.questionNumber-1].question}</p>
+        <ul style='list-style-type: none;'>
+          <li><label for ='a' class='choice-a'>A.<input type='radio' name='choice' value= 1 id = 'a' tabindex='0' required>${store.questions[store.questionNumber-1].answers[0]}</label></li>
+          <li><label for ='b' class='choice-b'>B.<input type='radio' name='choice' value= 2 id = 'b'>${store.questions[store.questionNumber-1].answers[1]}</label></li>
+          <li><label for ='c' class='choice-c'>C.<input type='radio' name='choice' value= 3 id = 'c'>${store.questions[store.questionNumber-1].answers[2]}</label></li>
+          <li><label for ='d' class='choice-d'>D.<input type='radio' name='choice' value= 4 id = 'd'>${store.questions[store.questionNumber-1].answers[3]}</label></li>
+        </ul>
+        <button type='submit' id='check-answer'>Check Answer</button>
+        <button type="submit" class='restart-button'>Restart</button> 
+        <p class="tellscore">Current Score: <span class='current-correct'>${store.score}</span> of ${store.questionNumber}</p>
+      </fieldset>
     </form>
   `;
 }
@@ -121,7 +130,7 @@ function generateQuizComplete() {
   return `
   <form class = "result">
   <label for="check result">Completed the Quiz</label>
-  <p id="start">High Five!<img src="images\\high-five.png"></p>
+  <p id="start">High Five!<img src="images\\high-five.png" alt='high-five'></p>
   <p class="quesline">You got <span class ="current-correct">${store.score}</span> out of 5!</p>
   <button type="submit" class='restart-button'>Restart</button>
 </form>`;
